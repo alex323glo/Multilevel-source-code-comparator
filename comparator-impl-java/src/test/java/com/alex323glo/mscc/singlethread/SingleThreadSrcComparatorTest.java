@@ -50,7 +50,7 @@ public class SingleThreadSrcComparatorTest {
     private static final int LEVEL1_TEST_L1 = 19;
     private static final int LEVEL1_TEST_L2 = 23;
     private static final int LEVEL1_TEST_C1 = 3;
-    private static final int LEVEL1_TEST_C2 = 19;
+    private static final int LEVEL1_TEST_C2 = 15;
     private static final int LEVEL1_TEST_CN = 3;
 
     private static final int LEVEL2_TEST_L1 = 15;

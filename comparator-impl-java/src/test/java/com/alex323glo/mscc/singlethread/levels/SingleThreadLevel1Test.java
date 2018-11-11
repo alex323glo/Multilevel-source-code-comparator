@@ -26,7 +26,7 @@ public class SingleThreadLevel1Test {
     private static final int TEST_L1 = 19;
     private static final int TEST_L2 = 23;
     private static final int TEST_C1 = 3;
-    private static final int TEST_C2 = 19;
+    private static final int TEST_C2 = 15;
     private static final int TEST_CN = 3;
 
     @Before
