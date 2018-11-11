@@ -4,7 +4,17 @@ import com.alex323glo.mscc.api.data.SourceCode;
 import lombok.*;
 
 /**
- * TODO write doc!
+ * Extended partial (level-scaled) result data model.
+ *
+ * Contains such comparison result data:
+ *  - simple partial result data (see PartialResult class docs)
+ *  - preprocessed variant of first text
+ *  - preprocessed variant of second text
+ *
+ * @author Alexey_O
+ * @version 0.1
+ *
+ * @see PartialResult
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

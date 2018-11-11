@@ -5,7 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO write doc!
+ * General source codes' comparison result data model.
+ *
+ * Contains such comparison result data:
+ *  - level_1..level_5 partial comparison results
+ *  - (for more details see PartialResult class docs)
+ *
+ * @author Alexey_O
+ * @version 0.1
+ *
+ * @see PartialResult
  */
 @Data
 @AllArgsConstructor

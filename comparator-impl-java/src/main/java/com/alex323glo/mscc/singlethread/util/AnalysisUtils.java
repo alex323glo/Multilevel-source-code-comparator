@@ -3,6 +3,12 @@ package com.alex323glo.mscc.singlethread.util;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Source code analysis utils container.
+ *
+ * @author Alexey_O
+ * @version 0.1
+ */
 public class AnalysisUtils {
     /**
      * Searches for equal elements in list1 and list2.
@@ -60,7 +66,14 @@ public class AnalysisUtils {
         return lineMatchesCount;
     }
 
-
+    /**
+     * Counts number of non-matching row sequences.
+     *
+     * @param list1 first pre-processed row list.
+     * @param list2 first pre-processed row list.
+     * @param sequencesMatchesCount number of matching raw sequences.
+     * @return number of non-matching row sequences
+     */
     private static int countNonMatchesSequence(List<String> list1, List<String> list2, int sequencesMatchesCount) {
         if (sequencesMatchesCount < 1) {
             return 1;

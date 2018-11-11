@@ -5,9 +5,14 @@ import lombok.NonNull;
 import java.util.List;
 
 /**
- * TODO write doc!
+ * Source code data model interface.
+ *
+ * @author Alexey_O
+ * @version 0.1
  */
 public interface SourceCode {
+
+    int rowsCount();
 
     String getString();
     void setString(@NonNull String text);

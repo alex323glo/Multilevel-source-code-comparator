@@ -14,7 +14,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * TODO write doc!
+ * Implementation of Source code data model interface.
+ * Is based on ArrayList data structure.
+ *
+ * @author Alexey_O
+ * @version 0.1
  */
 @Data
 public class StringListSourceCode implements SourceCode {
@@ -25,8 +29,7 @@ public class StringListSourceCode implements SourceCode {
     @ToString.Exclude
     private String[] lineArray;
 
-
-    public StringListSourceCode() {
+    private StringListSourceCode() {
         lineList = new ArrayList<>();
         lineArray = null;
     }
@@ -34,6 +37,11 @@ public class StringListSourceCode implements SourceCode {
     public StringListSourceCode(@NonNull List<String> lineList) {
         this.lineList = lineList;
         lineArray = null;
+    }
+
+    @Override
+    public int rowsCount() {
+        return lineList.size();
     }
 
     @Override
@@ -74,16 +82,15 @@ public class StringListSourceCode implements SourceCode {
     @Override
     public StringListSourceCode copy() {
         ArrayList<String> newList = new ArrayList<>();
-        lineList.forEach(el -> {
-            newList.add(el.substring(0));
-        });
+        lineList.forEach(el -> newList.add(el.substring(0)));
         return new StringListSourceCode(newList);
     }
 
     @Override
     public String toString() {
         return "StringListSourceCode{" +
-                "lineList=" + lineList.stream().collect(Collectors.joining("\n", "\n[\n", "\n]\n")) +
+                "lineList=" +
+                lineList.stream().collect(Collectors.joining("\n", "\n[\n", "\n]\n")) +
                 '}';
     }
 
@@ -96,7 +103,7 @@ public class StringListSourceCode implements SourceCode {
 
     public static StringListSourceCode ofFile(@NonNull String fileName) throws IOException {
         try (
-                BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))
         ) {
             List<String> linesList = bufferedReader.lines().collect(Collectors.toList());
             return new StringListSourceCode(linesList);

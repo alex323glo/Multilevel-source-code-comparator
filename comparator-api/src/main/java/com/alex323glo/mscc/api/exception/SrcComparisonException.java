@@ -1,13 +1,12 @@
 package com.alex323glo.mscc.api.exception;
 
 /**
- * TODO write doc!
+ * Special checked exception related to Source Code comparison operations.
+ *
+ * @author Alexey_O
+ * @version 0.1
  */
 public class SrcComparisonException extends Exception {
-
-    /*
-    TODO complete SrcComparisonException!
-     */
 
     public SrcComparisonException(String message) {
         super(message);
