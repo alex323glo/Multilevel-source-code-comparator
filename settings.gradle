@@ -2,4 +2,5 @@ rootProject.name = 'Multilevel-source-code-comparator'
 
 include 'comparator-api'
 include 'comparator-impl-java'
+include 'comparator-impl-kotlin'
 
