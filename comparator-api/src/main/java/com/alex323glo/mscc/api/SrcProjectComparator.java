@@ -1,9 +1,10 @@
 package com.alex323glo.mscc.api;
 
-import com.alex323glo.mscc.api.data.project.ProjectOptions;
+import com.alex323glo.mscc.api.data.project.options.ProjectOptions;
 import com.alex323glo.mscc.api.data.project.SrcProject;
 import com.alex323glo.mscc.api.result.ComparisonResult;
 import com.alex323glo.mscc.api.result.project.PairDiffKey;
+import lombok.NonNull;
 
 import java.util.Map;
 import java.util.Set;
@@ -31,9 +32,9 @@ public interface SrcProjectComparator {
      * @param options projects' options (excluded file types, additional comparison params, etc.)
      * @return map, where Key - comparison short meta (or identification) and Value - comparison result.
      */
-    Map<PairDiffKey, ComparisonResult> compareAsAllFilePairs(SrcProject srcProject1,
-                                                             SrcProject srcProject2,
-                                                             Set<ProjectOptions> options);
+    Map<PairDiffKey, ComparisonResult> compareAsAllFilePairs(@NonNull SrcProject srcProject1,
+                                                             @NonNull SrcProject srcProject2,
+                                                             @NonNull Set<ProjectOptions> options);
 
     /**
      * Compares projects by such strategy:
@@ -46,7 +47,7 @@ public interface SrcProjectComparator {
      * @param options projects' options (excluded file types, additional comparison params, etc.)
      * @return comparison result of projects' "super-documents"
      */
-    ComparisonResult compareAsDocuments(SrcProject srcProject1,
-                                        SrcProject srcProject2,
-                                        Set<ProjectOptions> options);
+    ComparisonResult compareAsDocuments(@NonNull SrcProject srcProject1,
+                                        @NonNull SrcProject srcProject2,
+                                        @NonNull Set<ProjectOptions> options);
 }
