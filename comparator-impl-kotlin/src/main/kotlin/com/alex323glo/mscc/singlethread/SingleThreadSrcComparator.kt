@@ -6,6 +6,7 @@ import com.alex323glo.mscc.api.exception.SrcComparisonException
 import com.alex323glo.mscc.api.result.ComparisonResult
 import com.alex323glo.mscc.api.result.ExtendedPartialResult
 import com.alex323glo.mscc.api.result.PartialResult
+import com.alex323glo.mscc.singlethread.levels.*
 
 class SingleThreadSrcComparator (private val level1: (SourceCode, SourceCode) -> PartialResult,
                                  private val level2: (SourceCode, SourceCode) -> ExtendedPartialResult,
@@ -27,5 +28,16 @@ class SingleThreadSrcComparator (private val level1: (SourceCode, SourceCode) ->
         val result4 = level4(result2.changedText1, result2.changedText2)
         val result5 = level5(result4.changedText1, result4.changedText2)
         return ComparisonResult(result1, result2, result3, result4, result5)
+    }
+
+    companion object {
+        @JvmStatic
+        fun basic(): SingleThreadSrcComparator = SingleThreadSrcComparator(
+                runLevel1,
+                runLevel2,
+                runLevel3,
+                runLevel4,
+                runLevel5
+        )
     }
 }
